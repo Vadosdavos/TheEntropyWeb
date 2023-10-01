@@ -1,5 +1,5 @@
 const Header = () => (
-  <header className="container text-black">
+  <header className="container relative text-center text-white">
     The Entropy
   </header>
 );

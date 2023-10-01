@@ -10,6 +10,9 @@ const config: Config = {
       center: true,
     },
     extend: {
+      colors: {
+        "main-bg": "var(--main-bg)",
+      },
     },
   },
   plugins: [],

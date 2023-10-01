@@ -3,11 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --main-bg: gray;
+  --main-bg: rgb(66, 66, 117);
 }
+
 body {
   background: var(--main-bg);
   color: white;
+}
+
+#__next {
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 input:-webkit-autofill,
