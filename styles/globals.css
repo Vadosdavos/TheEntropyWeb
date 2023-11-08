@@ -9,6 +9,8 @@
 body {
   background: var(--main-bg);
   color: white;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #__next {
