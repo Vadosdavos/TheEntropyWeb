@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import { getRandomNumber } from "utils/numbers/random";
 import Star from "./star";
+import RingsBg, { RingsBgProps } from "./rings";
 
-const Background = () => {
+const Background = ({ enter, setEnter }: RingsBgProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const makeStars = () => {
@@ -90,7 +91,10 @@ const Background = () => {
   }, []);
 
   return (
-    <canvas ref={canvasRef} className="absolute top-0 left-0 bottom-0 right-0 bg-main-bg" />
+    <>
+      <canvas ref={canvasRef} className="absolute top-0 left-0 bottom-0 right-0 bg-main-bg" />
+      <RingsBg enter={enter} setEnter={setEnter} />
+    </>
   );
 };
 

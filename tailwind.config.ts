@@ -13,6 +13,17 @@ const config: Config = {
       colors: {
         "main-bg": "var(--main-bg)",
       },
+      animation: {
+        "spin-reverse": "spin-reverse 150s linear infinite",
+        "spin-slow": "spin 150s linear infinite",
+      },
+      keyframes: {
+        "spin-reverse": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-360deg)" },
+        },
+      },
+
     },
   },
   plugins: [],

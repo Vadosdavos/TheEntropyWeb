@@ -1,5 +1,7 @@
 import { getRandomNumber } from "utils/numbers/random";
 
+const STARS_SPEED = 0.5;
+
 export default class Star {
   private x: number;
 
@@ -56,7 +58,7 @@ export default class Star {
   }
 
   update() {
-    this.z -= 5;
+    this.z -= STARS_SPEED;
     if (this.z <= 0) {
       this.z = this.canvasWidth;
     }

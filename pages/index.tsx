@@ -26,6 +26,8 @@ type HomePageProps = {
 
 const Home: NextPage<HomePageProps> = ({ message }) => {
   const [activePage, setActivePage] = useState("About");
+  const [enter, setEnter] = useState(false);
+
   const renderPage = (page: string) => {
     switch (page) {
       case "About":
@@ -41,7 +43,7 @@ const Home: NextPage<HomePageProps> = ({ message }) => {
   };
   return (
     <>
-      <Background />
+      <Background enter={enter} setEnter={setEnter} />
       <Header setActivePage={setActivePage} />
       <main
         className={`relative ${roboto.className} mb-auto container grid grid-cols-2`}
