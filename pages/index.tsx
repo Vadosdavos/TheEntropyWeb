@@ -24,7 +24,7 @@ type HomePageProps = {
   message: string;
 };
 
-const Home: NextPage<HomePageProps> = ({ message }) => {
+const Home: NextPage<HomePageProps> = () => {
   const [activePage, setActivePage] = useState("About");
   const [enter, setEnter] = useState(false);
 
