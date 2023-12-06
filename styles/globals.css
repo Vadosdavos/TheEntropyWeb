@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --main-bg: rgb(66, 66, 117);
+  --main-bg: radial-gradient(#000 0%, #000814 30%, #0f274d 100%);
 }
 
 body {
@@ -23,9 +23,18 @@ body {
   align-items: center;
 }
 
+.main-wrapper {
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
 }
-

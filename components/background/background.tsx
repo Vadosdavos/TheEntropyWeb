@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { getRandomNumber } from "utils/numbers/random";
 import Star from "./star";
-import RingsBg, { RingsBgProps } from "./rings";
+import RingsBg from "./rings";
 
-const Background = ({ enter, setEnter }: RingsBgProps) => {
+const Background = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const makeStars = () => {
@@ -35,16 +35,15 @@ const Background = ({ enter, setEnter }: RingsBgProps) => {
 
     const bg = canvasContext.createRadialGradient(
       canvas.width / 2,
-      -canvas.height / 5,
-      10,
+      canvas.height / 2,
+      100,
       canvas.width / 2,
-      canvas.height,
-      canvas.height * 4,
+      canvas.height / 2,
+      canvas.height * 1,
     );
-    bg.addColorStop(0, "#32465E");
+    bg.addColorStop(0, "#000");
     bg.addColorStop(0.3, "#000814");
-    bg.addColorStop(0.8, "#000814");
-    bg.addColorStop(1, "#000");
+    bg.addColorStop(1, "#0f274d");
 
     const init = () => {
       for (let i = 0; i < nStars; i += 1) {
@@ -92,8 +91,8 @@ const Background = ({ enter, setEnter }: RingsBgProps) => {
 
   return (
     <>
-      <canvas ref={canvasRef} className="absolute top-0 left-0 bottom-0 right-0 bg-main-bg" />
-      <RingsBg enter={enter} setEnter={setEnter} />
+      <canvas ref={canvasRef} className="absolute top-0 left-0 bottom-0 right-0 bg-main-bg animate-fade-in" />
+      <RingsBg />
     </>
   );
 };
