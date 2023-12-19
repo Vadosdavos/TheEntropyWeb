@@ -16,20 +16,18 @@ const RingsBg = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let parallaxInstance: Parallax;
+    let parallaxInstance: Parallax | undefined;
 
     if (parallaxRef.current) {
-      parallaxInstance = new Parallax(parallaxRef.current, {
-        // limitY: 0,
-      });
+      parallaxInstance = new Parallax(parallaxRef.current);
     }
-    if (isEnter) {
+    if (isEnter && parallaxInstance !== undefined) {
       parallaxInstance.destroy();
       setTimeout(() => {
         setVisible(false);
       }, 1000);
     }
-    return () => parallaxInstance.destroy();
+    return () => (parallaxInstance !== undefined ? parallaxInstance.destroy() : undefined);
   }, [isEnter]);
 
   return (
