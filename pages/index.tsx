@@ -47,14 +47,18 @@ const Home: NextPage<HomePageProps> = () => {
   return (
     <>
       <Background />
-      <Header setActivePage={setActivePage} />
-      <main
-        className={`overflow-hidden relative ${roboto.className} mb-auto container grid grid-cols-2 ${isEnter ? "animate-fade-in" : "opacity-0"}`}
-      >
-        <aside className="">pers stoit</aside>
-        {renderPage(activePage)}
-      </main>
-      <Footer />
+      {isEnter && (
+      <>
+        <Header setActivePage={setActivePage} />
+        <main
+          className={`overflow-hidden relative ${roboto.className} mb-auto container grid grid-cols-2 ${isEnter ? "animate-fade-in z-10" : "opacity-0"}`}
+        >
+          <aside className="">pers stoit</aside>
+          {renderPage(activePage)}
+        </main>
+        <Footer />
+      </>
+      )}
     </>
   );
 };

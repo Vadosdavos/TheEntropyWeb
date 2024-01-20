@@ -17,7 +17,7 @@ const Header = ({ setActivePage }: HeaderProps) => {
   return (
     <header className={`${inter.className} 
     container flex flex-col gap-2 items-center relative text-center text-white p-10 
-    ${isEnter ? "animate-fade-in" : "opacity-0"}`}
+    ${isEnter ? "animate-fade-in z-10" : "opacity-0"}`}
     >
       <Image src={logo} width={100} height={100} alt="The Entropy Project" />
       <h1 className="invisible absolute pointer-events-none select-none">The Entropy Project</h1>
