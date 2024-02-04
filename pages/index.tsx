@@ -9,6 +9,7 @@ import Art from "components/pages/art";
 import Contact from "components/pages/contact";
 import EnterContext from "contexts/enter";
 import Loader from "components/layouts/loader";
+import BackgroundCanvas from "components/canvas";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
@@ -46,18 +47,19 @@ const Home: NextPage<HomePageProps> = () => {
   };
   return (
     <>
-      <Background />
+      <BackgroundCanvas />
+      {/* <Background /> */}
       {isEnter && (
-      <>
-        <Header setActivePage={setActivePage} />
-        <main
-          className={`overflow-hidden relative ${roboto.className} mb-auto container grid grid-cols-2 ${isEnter ? "animate-fade-in z-10" : "opacity-0"}`}
-        >
-          <aside className="">pers stoit</aside>
-          {renderPage(activePage)}
-        </main>
-        <Footer />
-      </>
+        <>
+          <Header setActivePage={setActivePage} />
+          <main
+            className={`overflow-hidden relative ${roboto.className} mb-auto container grid grid-cols-2 ${isEnter ? "animate-fade-in z-10" : "opacity-0"}`}
+          >
+            <aside className="">pers stoit</aside>
+            {renderPage(activePage)}
+          </main>
+          <Footer />
+        </>
       )}
     </>
   );
