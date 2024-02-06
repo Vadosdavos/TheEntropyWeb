@@ -1,22 +1,15 @@
 import type { NextPage } from "next";
 import { Roboto } from "next/font/google";
 import Header from "components/layouts/header";
-import dynamic from "next/dynamic";
 import Footer from "components/layouts/footer";
 import About from "components/pages/about";
 import { useContext, useState } from "react";
 import Art from "components/pages/art";
 import Contact from "components/pages/contact";
 import EnterContext from "contexts/enter";
-import Loader from "components/layouts/loader";
 import BackgroundCanvas from "components/canvas";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
-
-const Background = dynamic(() => import("components/background/background"), {
-  ssr: false,
-  loading: () => <Loader />,
-});
 
 export const getStaticProps = async () => ({
   props: {
@@ -48,7 +41,6 @@ const Home: NextPage<HomePageProps> = () => {
   return (
     <>
       <BackgroundCanvas />
-      {/* <Background /> */}
       {isEnter && (
         <>
           <Header setActivePage={setActivePage} />

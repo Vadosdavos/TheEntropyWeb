@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber";
-import CanvasStar from "./start";
+import Space from "./space";
 
 const BackgroundCanvas = () => (
   <Canvas>
     <ambientLight intensity={Math.PI / 2} />
-    <CanvasStar />
+    <Space />
   </Canvas>
 );
 
