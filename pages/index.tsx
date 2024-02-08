@@ -7,9 +7,15 @@ import { useContext, useState } from "react";
 import Art from "components/pages/art";
 import Contact from "components/pages/contact";
 import EnterContext from "contexts/enter";
-import BackgroundCanvas from "components/canvas";
+import dynamic from "next/dynamic";
+import Loader from "components/layouts/loader";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
+
+const Background = dynamic(() => import("components/background"), {
+  ssr: false,
+  loading: () => <Loader />,
+});
 
 export const getStaticProps = async () => ({
   props: {
@@ -40,7 +46,7 @@ const Home: NextPage<HomePageProps> = () => {
   };
   return (
     <>
-      <BackgroundCanvas />
+      <Background />
       {isEnter && (
         <>
           <Header setActivePage={setActivePage} />

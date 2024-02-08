@@ -1,6 +1,6 @@
 const Loader = () => (
-  <div className="m-auto">
-    <p>Loading...</p>
+  <div className="loader">
+    <div />
   </div>
 );
 

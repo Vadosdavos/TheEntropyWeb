@@ -39,3 +39,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
 }
+
+.loader {
+  @apply w-10 h-10 relative animate-[rotate_1s_linear_infinite] rounded-[50%] before:content-[""] before:box-border before:absolute before:border-[$color-white] before:animate-[prixClipFix_2s_linear_infinite] before:rounded-[50%] before:border-2 before:border-solid before:inset-0;
+}
