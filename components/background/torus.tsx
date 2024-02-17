@@ -1,21 +1,22 @@
 import {
   Edges, Torus, useCursor, useTexture,
 } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { Vector3, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
 
 import lines from "@/public/images/lines.png";
 import linesActive from "@/public/images/lines-active.png";
+import { Mesh } from "three";
 
 type TorusRingProps = {
-  position: THREE.Vector3
+  position: Vector3
   revert?: boolean
 };
 
 const TorusRing = ({ position, revert = false }: TorusRingProps) => {
   const [hover, setHover] = useState(false);
-  const torusRef = useRef<THREE.Mesh>(null);
+  const torusRef = useRef<Mesh>(null!);
   const [linesTexture, linesActiveTexture] = useTexture([lines.src, linesActive.src]);
   linesTexture.wrapS = THREE.RepeatWrapping;
   linesTexture.wrapT = THREE.RepeatWrapping;
