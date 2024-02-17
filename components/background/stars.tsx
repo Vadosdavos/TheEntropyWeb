@@ -6,7 +6,7 @@ const STARS_SPEED = 10;
 
 const StarField = () => {
   const starFieldRef = useRef<THREE.Points | null>(null);
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (starFieldRef.current) {
       const vertices = starFieldRef.current.geometry.attributes.position;
       // Движение звезд к камере

@@ -30,10 +30,17 @@ const RingsBg = () => {
     return () => (parallaxInstance !== undefined ? parallaxInstance.destroy() : undefined);
   }, [isEnter]);
 
+  const handleEnter = () => {
+    if (isEnter) {
+      return;
+    }
+    setIsEnter(true);
+  };
+
   return (
     <div className="absolute w-screen h-screen overflow-hidden flex items-center justify-center animate-fade-in">
       {visible && (
-        <div className="absolute w-[250vw] h-[250vw] animate-spin-slow">
+        <div className="absolute w-[150vw] h-[150vw] animate-spin-slow">
           <Image
             src={ring}
             alt="ring"
@@ -60,9 +67,9 @@ const RingsBg = () => {
           />
         </div>
       )}
-      <div className="absolute w-[50vw] h-[50vw] !pointer-events-auto z-10" ref={parallaxRef}>
-        <div className="absolute w-[50vw] h-[50vw]" data-depth="0.1">
-          <div className="absolute w-[50vw] h-[50vw] animate-spin-reverse">
+      <div className="absolute w-[30vw] cursor-pointer h-[30vw] !pointer-events-auto z-10" ref={parallaxRef} onClick={handleEnter}>
+        <div className="absolute w-[30vw] h-[30vw]" data-depth="0.1">
+          <div className="absolute w-[30vw] h-[30vw] animate-spin-reverse">
             <Image
               src={ring}
               alt="ring"
@@ -107,8 +114,7 @@ const RingsBg = () => {
 
       </div>
 
-      {!isEnter && <button onClick={() => setIsEnter(true)} className="z-10" type="button">Enter</button>}
-      <div className={`absolute w-[450px] h-[450px] z-0 scale-1 rounded-full pointer-events-none transition-all duration-[2000ms] ${isEnter ? "scale-[5] opacity-100" : ""} ${hover ? "opacity-100" : "opacity-0"} overflow-hidden`}>
+      <div className={`absolute w-[30vw] h-[30vw] z-0 scale-1 rounded-full pointer-events-none transition-all duration-[2000ms] ${isEnter ? "scale-[5] opacity-100" : ""} ${hover ? "opacity-100" : "opacity-0"} overflow-hidden`}>
         <Image
           src={cosmos}
           alt="cosmos"
@@ -119,6 +125,7 @@ const RingsBg = () => {
             objectFit: "cover",
             transition: "transform 2s",
           }}
+          onClick={handleEnter}
         />
       </div>
     </div>
