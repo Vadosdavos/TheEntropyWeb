@@ -1,3 +1,5 @@
+"use client";
+
 import type { NextPage } from "next";
 import { Roboto } from "next/font/google";
 import Header from "components/layouts/header";
@@ -17,17 +19,7 @@ const Background = dynamic(() => import("components/background"), {
   loading: () => <Loader />,
 });
 
-export const getStaticProps = async () => ({
-  props: {
-    message: "Hello",
-  },
-});
-
-type HomePageProps = {
-  message: string;
-};
-
-const Home: NextPage<HomePageProps> = () => {
+const Home: NextPage = () => {
   const [activePage, setActivePage] = useState("About");
   const { isEnter } = useContext(EnterContext);
 
