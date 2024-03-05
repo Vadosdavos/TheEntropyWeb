@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  box-sizing: border-box;
+}
 
 :root {
   --main-bg: radial-gradient(#000 0%, #000814 30%, #0f274d 100%);

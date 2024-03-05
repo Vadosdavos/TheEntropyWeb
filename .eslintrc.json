@@ -11,7 +11,6 @@
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "import/prefer-default-export": "off",
     "@typescript-eslint/quotes": ["error", "double"],
     "@typescript-eslint/no-explicit-any": "error",
     "jsx-a11y/label-has-associated-control": 0,
@@ -27,7 +26,47 @@
     "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "@next/next/no-img-element": "warn",
     "prefer-destructuring": "warn",
-    "import/no-extraneous-dependencies": ["off"],
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          "external", 
+          "builtin", 
+          "internal", 
+          "sibling", 
+          "parent", 
+          "index"
+       ], 
+      "pathGroups": [
+          { 
+            "pattern": "components", 
+            "group": "internal" 
+          }, 
+          { 
+            "pattern": "common", 
+            "group": "internal" 
+          }, 
+          { 
+            "pattern": "routes/ **", 
+            "group": "internal" 
+          }, 
+          { 
+            "pattern": "assets/**", 
+            "group": "internal", 
+            "position": "after" 
+          }
+       ], 
+      "pathGroupsExcludedImportTypes": 
+         ["internal"], 
+         "alphabetize": { 
+            "order": "asc", 
+            "caseInsensitive": true 
+         }
+      }
+    ],
     "react/no-unknown-property": "off"
   }
 }

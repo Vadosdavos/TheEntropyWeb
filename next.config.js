@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  sassOptions: {
+    prependData: "@import 'styles/settings/index.scss';",
+  },
   output: "standalone",
   swcMinify: true,
   serverRuntimeConfig: {
