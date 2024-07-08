@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import React, { useRef } from "react";
 
 const STARS_SPEED = 10;
 

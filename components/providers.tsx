@@ -1,7 +1,8 @@
 "use client";
 
-import EnterContext from "@/contexts/enter";
 import { useMemo, useState } from "react";
+
+import EnterContext from "@/contexts/enter";
 
 const Providers = ({ children }: {
   children: React.ReactNode

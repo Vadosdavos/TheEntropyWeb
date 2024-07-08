@@ -1,13 +1,16 @@
 import Image from "next/image";
+import Parallax from "parallax-js";
 import {
   useContext, useEffect, useRef, useState,
 } from "react";
-import Parallax from "parallax-js";
+
 import EnterContext from "contexts/enter";
-import ring from "../../public/images/ring.png";
-import lines from "../../public/images/lines.png";
-import linesActive from "../../public/images/lines-active.png";
-import cosmos from "../../public/images/cosmos.jpg";
+import cosmos from "public/images/cosmos.jpg";
+import linesActive from "public/images/lines-active.png";
+import lines from "public/images/lines.png";
+import ring from "public/images/ring.png";
+
+import styles from "./rings.module.scss";
 
 const RingsBg = () => {
   const [visible, setVisible] = useState(true);
@@ -38,9 +41,9 @@ const RingsBg = () => {
   };
 
   return (
-    <div className="absolute w-screen h-screen overflow-hidden flex items-center justify-center animate-fade-in">
+    <div className={styles.wrapper}>
       {visible && (
-        <div className="absolute w-[150vw] h-[150vw] animate-spin-slow">
+        <div className={styles.ring}>
           <Image
             src={ring}
             alt="ring"
@@ -67,9 +70,9 @@ const RingsBg = () => {
           />
         </div>
       )}
-      <div className="absolute w-[30vw] cursor-pointer h-[30vw] !pointer-events-auto z-10" ref={parallaxRef} onClick={handleEnter}>
-        <div className="absolute w-[30vw] h-[30vw]" data-depth="0.1">
-          <div className="absolute w-[30vw] h-[30vw] animate-spin-reverse">
+      <div className={styles.ring2Wrapper} ref={parallaxRef} onClick={handleEnter}>
+        <div className={styles.ring2Parallax} data-depth="0.1">
+          <div className={styles.ring2Animate}>
             <Image
               src={ring}
               alt="ring"
@@ -105,7 +108,7 @@ const RingsBg = () => {
                 transition: "transform 2s, opacity 0.3s",
                 transform: isEnter ? "scale(5)" : "scale(1)",
               }}
-              className="opacity-0 hover:opacity-100"
+              className={styles.ring2LinesActive}
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
             />

@@ -1,7 +1,9 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import EnterContext from "contexts/enter";
+import Image from "next/image";
 import { useContext } from "react";
+
+import EnterContext from "contexts/enter";
+
 import logo from "../../public/images/logo.png";
 
 const inter = Inter({ subsets: ["latin"] });

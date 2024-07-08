@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  animation: fade-in 0.7s linear;
+}
+
+.ring {
+  position: absolute;
+  width: 150vw;
+  height: 150vh;
+  animation: spin 150s linear infinite;
+}
+
+.ring2Wrapper, .ring2Parallax, .ring2Animate, .cosmos {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+}
+
+.ring2Wrapper {
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 10;
+}
+
+.ring2Animate {
+  animation: spin-reverse 150s linear infinite
+}
+
+.ring2LinesActive {
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.cosmos {
+  z-index: 0;
+  transform: scale(1);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all $transition-default;
+}

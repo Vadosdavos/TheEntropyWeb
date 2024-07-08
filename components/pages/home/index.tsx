@@ -46,10 +46,7 @@ const Home: NextPage = () => {
       {isEnter && (
         <>
           <Header setActivePage={setActivePage} />
-          <main
-            className={cn(styles.main, roboto.className, "centered", { isEnter: styles.entered })}
-          // className={`overflow-hidden relative ${roboto.className} mb-auto container grid grid-cols-2 ${isEnter ? "animate-fade-in z-10" : "opacity-0"}`}
-          >
+          <main className={cn(styles.main, roboto.className, "centered", { isEnter: styles.entered })}>
             <aside className="">pers stoit</aside>
             {renderPage(activePage)}
           </main>

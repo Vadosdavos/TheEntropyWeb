@@ -1,5 +1,6 @@
-import EnterContext from "contexts/enter";
 import { useContext } from "react";
+
+import EnterContext from "contexts/enter";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

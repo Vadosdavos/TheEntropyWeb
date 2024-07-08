@@ -1,9 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import { useContext, useEffect, useState } from "react";
-import EnterContext from "@/contexts/enter";
-import StarField from "./stars";
 
+import EnterContext from "@/contexts/enter";
+
+import styles from "./background.module.scss";
 import RingsBg from "./rings";
+import StarField from "./stars";
 
 const Background = () => {
   const [isCanvas, setIsCanvas] = useState(true);
@@ -19,7 +21,7 @@ const Background = () => {
       {isCanvas && (
         <Canvas
           camera={{ position: [0, 0, 100] }}
-          className="animate-fade-in"
+          className={styles.canvas}
           style={{ position: "absolute" }}
         >
           <StarField />
