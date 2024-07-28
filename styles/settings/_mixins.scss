@@ -1,0 +1,38 @@
+
+@mixin spin {
+  animation: spin 150s linear infinite;
+
+}
+
+@mixin fade-in  {
+  animation: fade-in 0.7s linear;
+
+}
+
+@mixin spin-reverse {
+  animation: spin-reverse 150s linear infinite;
+}
+
+  
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0 };
+  100% { opacity: 1 };
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

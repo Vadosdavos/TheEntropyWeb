@@ -1,5 +1,5 @@
 const About = () => (
-  <section className="text-red-500">
+  <section>
     <h2>About </h2>
     <p>
       AboutAboutAboutAboutAboutAbout About AboutAboutAboutAboutA

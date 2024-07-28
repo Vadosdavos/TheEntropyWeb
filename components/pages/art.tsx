@@ -2,9 +2,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const Art = () => (
-  <section className="text-yellow-500">
+  <section>
     <h2>Art</h2>
-    <div className="w-full">
+    <div>
       <Swiper
         slidesPerView="auto"
       >

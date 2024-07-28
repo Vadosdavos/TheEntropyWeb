@@ -1,10 +1,12 @@
+import cn from "classnames";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { useContext } from "react";
 
+import logo from "@/public/images/logo.png";
 import EnterContext from "contexts/enter";
 
-import logo from "../../public/images/logo.png";
+import styles from "./header.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,14 +19,11 @@ const Header = ({ setActivePage }: HeaderProps) => {
   const { isEnter } = useContext(EnterContext);
 
   return (
-    <header className={`${inter.className} 
-    container flex flex-col gap-2 items-center relative text-center text-white p-10 
-    ${isEnter ? "animate-fade-in z-10" : "opacity-0"}`}
-    >
+    <header className={cn(inter.className, styles.header, { entered: isEnter })}>
       <Image src={logo} width={100} height={100} alt="The Entropy Project" />
-      <h1 className="invisible absolute pointer-events-none select-none">The Entropy Project</h1>
+      <h1 className="invisible">The Entropy Project</h1>
       <nav>
-        <ul className="flex gap-2">
+        <ul className={styles.navigation}>
           {navItems.map((el) => <li key={el}><button type="button" onClick={() => setActivePage(el)}>{el}</button></li>)}
         </ul>
       </nav>

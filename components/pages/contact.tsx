@@ -1,5 +1,5 @@
 const Contact = () => (
-  <section className="text-white">
+  <section>
     <h2>Contact</h2>
   </section>
 );

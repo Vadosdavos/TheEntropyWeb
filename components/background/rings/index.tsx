@@ -1,3 +1,4 @@
+import cn from "classnames";
 import Image from "next/image";
 import Parallax from "parallax-js";
 import {
@@ -38,6 +39,14 @@ const RingsBg = () => {
       return;
     }
     setIsEnter(true);
+    setHover(false);
+  };
+
+  const handleHover = () => {
+    if (isEnter) {
+      return;
+    }
+    setHover((prev) => !prev);
   };
 
   return (
@@ -70,7 +79,13 @@ const RingsBg = () => {
           />
         </div>
       )}
-      <div className={styles.ring2Wrapper} ref={parallaxRef} onClick={handleEnter}>
+      <div
+        className={styles.ring2Wrapper}
+        ref={parallaxRef}
+        onClick={handleEnter}
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHover}
+      >
         <div className={styles.ring2Parallax} data-depth="0.1">
           <div className={styles.ring2Animate}>
             <Image
@@ -108,16 +123,18 @@ const RingsBg = () => {
                 transition: "transform 2s, opacity 0.3s",
                 transform: isEnter ? "scale(5)" : "scale(1)",
               }}
-              className={styles.ring2LinesActive}
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
+              className={cn(styles.ring2LinesActive, { [styles.ring2LinesActiveHover]: hover })}
             />
           </div>
         </div>
 
       </div>
 
-      <div className={`absolute w-[30vw] h-[30vw] z-0 scale-1 rounded-full pointer-events-none transition-all duration-[2000ms] ${isEnter ? "scale-[5] opacity-100" : ""} ${hover ? "opacity-100" : "opacity-0"} overflow-hidden`}>
+      <div className={cn(styles.cosmos, {
+        [styles.cosmosEntered]: isEnter,
+        [styles.cosmosHover]: hover,
+      })}
+      >
         <Image
           src={cosmos}
           alt="cosmos"

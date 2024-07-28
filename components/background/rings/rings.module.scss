@@ -6,43 +6,59 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  animation: fade-in 0.7s linear;
+  @include fade-in;
 }
 
 .ring {
   position: absolute;
   width: 150vw;
-  height: 150vh;
-  animation: spin 150s linear infinite;
+  height: 150vw;
+  @include spin;
 }
 
 .ring2Wrapper, .ring2Parallax, .ring2Animate, .cosmos {
   position: absolute;
   width: 30vw;
-  height: 30vh;
+  height: 30vw;
 }
 
 .ring2Wrapper {
   cursor: pointer;
-  pointer-events: all;
+  pointer-events: all !important;
   z-index: 10;
 }
 
 .ring2Animate {
-  animation: spin-reverse 150s linear infinite
+  @include spin-reverse;
 }
 
 .ring2LinesActive {
   opacity: 0;
-  &:hover {
-    opacity: 1;
-  }
+  z-index: 20;
+}
+.ring2LinesActiveHover {
+  opacity: 1;
 }
 
 .cosmos {
-  z-index: 0;
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
   transform: scale(1);
+  opacity: 0;
   border-radius: 50%;
   pointer-events: none;
   transition: all $transition-default;
+  overflow: hidden;
+}
+
+.cosmosHover {
+  opacity: 1;
+}
+
+.cosmosEntered {
+  transform: scale(5);
+  opacity: 1;
+  transition-duration: 2s;
+  pointer-events: none !important;
 }
