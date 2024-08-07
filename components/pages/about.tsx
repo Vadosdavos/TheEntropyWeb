@@ -2,9 +2,7 @@ const About = () => (
   <section>
     <h2>About </h2>
     <p>
-      AboutAboutAboutAboutAboutAbout About AboutAboutAboutAboutA
-      boutAboutAbout AboutAboutAboutAboutAboutAbout
-
+      Kurwa Studios presents! New awesome game!
     </p>
   </section>
 );

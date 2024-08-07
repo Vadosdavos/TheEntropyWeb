@@ -1,11 +1,13 @@
 "use client";
 
+import { Canvas } from "@react-three/fiber";
 import cn from "classnames";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { Roboto } from "next/font/google";
-import { useContext, useState } from "react";
+import { Suspense, useContext, useState } from "react";
 
+import { Character } from "@/components/character";
 import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
 import Loader from "@/components/layouts/loader";
@@ -48,7 +50,11 @@ const Home: NextPage = () => {
         <>
           <Header setActivePage={setActivePage} />
           <main className={cn(styles.main, roboto.className, "centered", { entered: isEnter })}>
-            <aside className="">pers stoit</aside>
+            <Suspense fallback={<Loader />}>
+              <aside className={cn(styles.character, { entered: isEnter })}>
+                <Canvas><Character /></Canvas>
+              </aside>
+            </Suspense>
             {renderPage(activePage)}
           </main>
           <Footer />

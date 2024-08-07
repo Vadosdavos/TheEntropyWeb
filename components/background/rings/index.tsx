@@ -6,7 +6,7 @@ import {
 } from "react";
 
 import EnterContext from "contexts/enter";
-import cosmos from "public/images/cosmos.jpg";
+import cosmos from "public/images/cosmos.webp";
 import linesActive from "public/images/lines-active.png";
 import lines from "public/images/lines.png";
 import ring from "public/images/ring.png";
@@ -31,7 +31,7 @@ const RingsBg = () => {
         setVisible(false);
       }, 1000);
     }
-    return () => (parallaxInstance !== undefined ? parallaxInstance.destroy() : undefined);
+    // return () => (parallaxInstance !== undefined ? parallaxInstance?.destroy() : undefined);
   }, [isEnter]);
 
   const handleEnter = () => {
