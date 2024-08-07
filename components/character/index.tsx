@@ -13,7 +13,7 @@ import * as THREE from "three";
 import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls, TransformControls } from "three-stdlib";
 
-import char from "assets/character.glb";
+import char from "public/model/character.glb";
 
 extend({ OrbitControls, TransformControls });
 
